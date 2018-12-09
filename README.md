@@ -1,4 +1,4 @@
-# 🕑ReactFlipClock
+# 🕑 ReactFlipClock
 
 ⚠️ **This project is under development** ⚠️
 
