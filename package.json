@@ -6,7 +6,10 @@
   "module": "dist/bundle.js",
   "dependencies": {
     "flipclock": "^0.10.0",
-    "jquery": "^3.3.1"
+    "husky": "^1.2.1",
+    "jquery": "^3.3.1",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -26,7 +29,15 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:esm": "rollup -c"
+    "build:esm": "rollup -c",
+    "prettier": "prettier --write 'src/**/*.{js,css}'",
+    "prettier:check": "prettier --list-different 'src/**/*.{js,css}'",
+    "prettier-changefiles": "pretty-quick --staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier-changefiles"
+    }
   },
   "repository": {
     "type": "git",
