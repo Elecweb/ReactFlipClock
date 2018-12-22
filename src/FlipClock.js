@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import React, { Component, createRef } from 'react';
 
 class FlipClock extends Component {
   element$ = null;
@@ -15,8 +15,8 @@ class FlipClock extends Component {
     });
   }
 
-  componentDidUpdate(prevProps){
-    this.setTimeWhenChanges(prevProps)
+  componentDidUpdate(prevProps) {
+    this.setTimeWhenChanges(prevProps);
   }
 
   setTimeWhenChanges = ({ time: prevTime }) => {
@@ -25,7 +25,7 @@ class FlipClock extends Component {
       this.element$.setTime(time);
       this.element$.start();
     }
-  }
+  };
 
   render() {
     return <div ref={this.flipclockRef} />;
@@ -33,4 +33,3 @@ class FlipClock extends Component {
 }
 
 export default FlipClock;
-
