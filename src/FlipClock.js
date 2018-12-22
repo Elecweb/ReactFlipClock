@@ -1,6 +1,7 @@
 import React, { Component, createRef } from "react";
 
 class FlipClock extends Component {
+  element$ = null;
   constructor() {
     super();
     this.flipclockRef = createRef();
@@ -8,11 +9,21 @@ class FlipClock extends Component {
 
   componentDidMount() {
     const flipclockRef = this.flipclockRef.current;
-    const element$ = $(flipclockRef);
-    element$.FlipClock(this.props.countDownTime, {
+    this.element$ = $(flipclockRef).FlipClock(this.props.time, {
       countdown: true,
       ...this.props
     });
+  }
+
+  componentDidUpdate(prevProps){
+    this.setTimeWhenChanges(prevProps)
+  }
+
+  setTimeWhenChanges = ({ time: prevTime }) => {
+    const { time } = this.props;
+    if (time !== prevTime) {
+      this.element$.setTime(time);
+    }
   }
 
   render() {
@@ -21,3 +32,4 @@ class FlipClock extends Component {
 }
 
 export default FlipClock;
+

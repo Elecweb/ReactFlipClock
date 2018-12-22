@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FlipClock countDownTime={2000} clockFace="DailyCounter" />
+        <FlipClock time={2000} clockFace="DailyCounter" />
       </div>
     );
   }
