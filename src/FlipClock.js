@@ -23,6 +23,7 @@ class FlipClock extends Component {
     const { time } = this.props;
     if (time !== prevTime) {
       this.element$.setTime(time);
+      this.element$.start();
     }
   }
 
