@@ -1,7 +1,5 @@
 # 🕑 ReactFlipClock
 
-⚠️ **This project is under development** ⚠️
-
 Wrapping [FlipClock.js](http://flipclockjs.com/) with React
 
 ## Installing
